@@ -53,11 +53,13 @@ class ViewController: UIViewController {
         headerView.axis = .horizontal
         let nextButton = UIButton()
         let image = UIImage(systemName: "chevron.right")
+        headerView.alignment = .center
         nextButton.setImage(image, for: .normal)
         headerView.distribution = .equalSpacing
         headerView.addArrangedSubview(createHeaderViewImage())
         headerView.addArrangedSubview(createHeaderViewLabel())
         headerView.addArrangedSubview(nextButton)
+        
         
         return headerView
     }
@@ -136,7 +138,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         titleLabel.text = contactsFirstLetters[section]
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         headerView.addSubview(titleLabel)
-        
         titleLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 0).isActive = true
         titleLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor).isActive = true
         
